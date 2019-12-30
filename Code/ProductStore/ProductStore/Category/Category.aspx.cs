@@ -20,7 +20,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -28,24 +28,23 @@ namespace ProductStore.Category
         {
             try
             {
+                List<CategoryModel> categoryList = new List<CategoryModel>();
                 string methodNameWithQueryParameter = string.Format("Category/");
                 string result = ServiceClient.GetServiceClient(methodNameWithQueryParameter);
                 if (!string.IsNullOrWhiteSpace(result))
-                { JsonResponse jsonObj = JsonConvert.DeserializeObject<JsonResponse>(result.Replace("\\", "").Trim('"'));
+                {
+                    JsonResponse jsonObj = JsonConvert.DeserializeObject<JsonResponse>(result.Replace("\\", "").Trim('"'));
                     if (jsonObj != null && jsonObj.IsValid && jsonObj.ResultData != null)
                     {
-                        List<CategoryModel> categoryList = jsonObj.ResultData.ToObject<List<CategoryModel>>();
-                        if (categoryList != null && categoryList.Count > 0)
-                        {
-                            CategoryGrid.DataSource = categoryList;
-                            CategoryGrid.DataBind();
-                        }
+                        categoryList = jsonObj.ResultData.ToObject<List<CategoryModel>>();
                     }
                 }
+                CategoryGrid.DataSource = categoryList;
+                CategoryGrid.DataBind();
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -58,7 +57,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -84,7 +83,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_RowEditing(object sender, GridViewEditEventArgs e)
@@ -96,7 +95,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
@@ -127,7 +126,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
@@ -140,7 +139,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_PreRender(object sender, EventArgs e)
@@ -159,7 +158,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void CategoryGrid_RowDataBound(object sender, GridViewRowEventArgs e)

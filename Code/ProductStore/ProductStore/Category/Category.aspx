@@ -18,11 +18,15 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div>
-        <a id="btnAddCategory" runat="server" href="AddCategory.aspx" class="LinkButton">Add Category</a>
+    <br />
+    <div style="width: 100%;">
+        <asp:Label ID="lblErrorMessage" runat="server" CssClass="ErrorMessage" Visible="false"></asp:Label>
     </div>
     <br />
     <div style="width: 100%; margin: auto; top: 5px;">
+        <a id="btnAddCategory" runat="server" href="AddCategory.aspx" class="LinkButton">Add Category</a>
+        <br />
+        <br />
         <asp:GridView ID="CategoryGrid" runat="server" PageSize="20" AllowPaging="True" DataKeyField="CategoryId" AutoGenerateColumns="False" CellPadding="4"
             ForeColor="#333333" GridLines="None" OnRowEditing="CategoryGrid_RowEditing" OnRowDeleting="CategoryGrid_RowDeleting"
             OnRowCancelingEdit="CategoryGrid_RowCancelingEdit" OnRowUpdating="CategoryGrid_RowUpdating" OnRowDataBound="CategoryGrid_RowDataBound"

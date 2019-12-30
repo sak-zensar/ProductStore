@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Product Store - Add Category" Language="C#" MasterPageFile="~/Shared/Site.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="ProductStore.Category.AddCategory" %>
-<%@ MasterType VirtualPath="~/Shared/Site.Master" %> 
+
+<%@ MasterType VirtualPath="~/Shared/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <style>
@@ -20,6 +21,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <br />
+    <div style="width: 100%;">
+        <asp:Label ID="lblErrorMessage" runat="server" CssClass="ErrorMessage" Visible="false"></asp:Label>
+    </div>
+    <br />
     <div>
         <br />
         <table style="width: 500px; margin: auto; top: 5px;" cellpadding="0" cellspacing="0">

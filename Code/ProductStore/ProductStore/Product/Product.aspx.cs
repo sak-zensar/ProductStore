@@ -23,7 +23,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -31,6 +31,7 @@ namespace ProductStore.Product
         {
             try
             {
+                List<ProductDetails> productList = new List<ProductDetails>();
                 string methodNameWithQueryParameter = string.Format("Product/ProductSearch?ProductName={0}&CategoryId={1}&CategoryName={2}&UnitId={3}", productName, categoryId, categoryName, unitId);
                 string result = ServiceClient.GetServiceClient(methodNameWithQueryParameter);
                 if (!string.IsNullOrWhiteSpace(result))
@@ -38,18 +39,15 @@ namespace ProductStore.Product
                     JsonResponse jsonObj = JsonConvert.DeserializeObject<JsonResponse>(result.Replace("\\", "").Trim('"'));
                     if (jsonObj != null && jsonObj.IsValid && jsonObj.ResultData != null)
                     {
-                        List<ProductDetails> productList = jsonObj.ResultData.ToObject<List<ProductDetails>>(); //(List<ProductDetails>)(jsonObj.ResultData);
-                        if (productList != null && productList.Count > 0)
-                        {
-                            ProductGrid.DataSource = productList;
-                        }
+                        productList = jsonObj.ResultData.ToObject<List<ProductDetails>>();
                     }
                 }
+                ProductGrid.DataSource = productList;
                 ProductGrid.DataBind();
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -62,7 +60,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -88,7 +86,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_RowEditing(object sender, GridViewEditEventArgs e)
@@ -100,7 +98,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
@@ -134,7 +132,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
@@ -147,7 +145,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -175,7 +173,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
         protected void ProductGrid_PreRender(object sender, EventArgs e)
@@ -194,7 +192,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -219,7 +217,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
     }
