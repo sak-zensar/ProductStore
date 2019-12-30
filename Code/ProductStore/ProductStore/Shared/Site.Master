@@ -20,6 +20,12 @@
             width: 60%;
         }
 
+        .ErrorMessage {
+            color: red;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
         .LinkBackButton {
             color: blue;
             background-color: white;
@@ -100,8 +106,6 @@
                 <asp:ScriptManager ID="smProductStore" runat="server"></asp:ScriptManager>
                 <asp:UpdatePanel ID="upProductDetails" runat="server">
                     <ContentTemplate>
-                        <asp:Label ID="lblErrorSummury" runat="server" Visible="false"></asp:Label>
-                        <br />
                         <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
                         </asp:ContentPlaceHolder>
                     </ContentTemplate>

@@ -20,7 +20,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
 
@@ -47,7 +47,7 @@ namespace ProductStore.Product
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
     }

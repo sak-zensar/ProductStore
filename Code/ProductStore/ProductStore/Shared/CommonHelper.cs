@@ -8,10 +8,15 @@ namespace ProductStore.Shared
 {
     public class CommonHelper
     {
-        public static void DisplayErrorMessage(Exception ex)
+        public static void DisplayErrorMessage(Exception ex, ref Label lblErrorMessage)
         {
             //Site site = new Site();
             //site.ErrorMessage = ex.InnerException != null ? string.Format("Exception Message: {0}, Inner Message: {1}.", ex.Message, ex.InnerException.Message) : string.Format("Exception Message: {0}.", ex.Message);
+            if (lblErrorMessage != null)
+            {
+                lblErrorMessage.Visible = true;
+                lblErrorMessage.Text = ex.InnerException != null ? string.Format("Exception Message: {0}, Inner Message: {1}.", ex.Message, ex.InnerException.Message) : string.Format("Exception Message: {0}.", ex.Message);
+            }
         }
 
         public static void FillCategoryDropDownList(ref DropDownList ddlCategory, HiddenField hfCategory)
@@ -32,7 +37,6 @@ namespace ProductStore.Shared
                             ddlCategory.DataTextField = "Name";
                             ddlCategory.DataValueField = "CategoryId";
                             ddlCategory.DataBind();
-                            ddlCategory.Items.Insert(0, new ListItem("Select Category", "0"));
                             if (hfCategory != null)
                             {
                                 string selectedCategory = hfCategory.Value.Trim();
@@ -50,6 +54,7 @@ namespace ProductStore.Shared
             {
                 throw ex;
             }
+            ddlCategory.Items.Insert(0, new ListItem("Select Category", "0"));
         }
 
         public static void FillUnitDropDownList(ref DropDownList ddlUnit, HiddenField hfUnit)
@@ -70,7 +75,6 @@ namespace ProductStore.Shared
                             ddlUnit.DataTextField = "UnitCode";
                             ddlUnit.DataValueField = "UnitId";
                             ddlUnit.DataBind();
-                            ddlUnit.Items.Insert(0, new ListItem("Select Unit", "0"));
                             if (hfUnit != null)
                             {
                                 string selectedCategory = hfUnit.Value.Trim();
@@ -88,7 +92,7 @@ namespace ProductStore.Shared
             {
                 throw ex;
             }
-
+            ddlUnit.Items.Insert(0, new ListItem("Select Unit", "0"));
         }
     }
 }

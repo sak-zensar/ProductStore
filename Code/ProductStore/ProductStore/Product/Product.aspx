@@ -23,10 +23,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
-    <div style="width: 100%;">
-        <asp:Label ID="lblErrorMessage" runat="server" Visible="false"></asp:Label>
-    </div>
     <br />
+    <div style="width: 100%;">
+        <asp:Label ID="lblErrorMessage" runat="server" CssClass="ErrorMessage" Visible="false"></asp:Label>
+    </div>
     <br />
     <div style="width: 100%;">
         <div style="width: 10%; float: left">

@@ -1,4 +1,6 @@
-
+bin
+obj
+packages
 Code/ProductStore/.vs/config/applicationhost.config
 Code/ProductStore/.vs/config/applicationhost.config
 Code/ProductStore/.vs/ProductStore/v15/Server/sqlite3/storage.ide-shm

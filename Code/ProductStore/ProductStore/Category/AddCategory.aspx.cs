@@ -33,7 +33,7 @@ namespace ProductStore.Category
             }
             catch (Exception ex)
             {
-                CommonHelper.DisplayErrorMessage(ex);
+                CommonHelper.DisplayErrorMessage(ex, ref lblErrorMessage);
             }
         }
     }
