@@ -34,7 +34,7 @@
                         <asp:Label ID="lblCategoryId" runat="server" Text='<%#Eval("CategoryId") %>'></asp:Label>
                     </ItemTemplate>
                     <EditItemTemplate>
-                        <asp:Label ID="lbDispCategoryNum" runat="server" Value='<%#Eval("CategoryId") %>'></asp:Label>
+                        <asp:Label ID="lbDispCategoryNum" runat="server" Text='<%#Eval("CategoryId") %>'></asp:Label>
                     </EditItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Category Name" HeaderStyle-CssClass="HeaderClass">
