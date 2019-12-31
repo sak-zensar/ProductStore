@@ -21,6 +21,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div style="width: 30%; margin: auto;">
+        <h2 id="PageHeader">Add Product</h2>
+    </div>
     <br />
     <div style="width: 100%;">
         <asp:Label ID="lblErrorMessage" runat="server" CssClass="ErrorMessage" Visible="false"></asp:Label>
@@ -31,7 +34,7 @@
         <table cellpadding="0" cellspacing="0" style="width: 500px; margin: auto; top: 5px;">
             <tr>
                 <td colspan="2">
-                    <asp:ValidationSummary ID="vsAddProduct" runat="server" DisplayMode="BulletList" ShowSummary="true" ValidationGroup="vgAddProduct" HeaderText="Errors:" ShowMessageBox="true" ShowValidationErrors="true" />
+                    <asp:ValidationSummary ID="vsAddProduct" runat="server" DisplayMode="BulletList" ShowSummary="true" ValidationGroup="vgAddProduct" CssClass="ErrorMessage" HeaderText="Errors:" ShowMessageBox="true" ShowValidationErrors="true" />
                 </td>
             </tr>
             <tr style="display: none;">
@@ -44,7 +47,7 @@
                 <td style="text-align: left;">Product Name</td>
                 <td>
                     <asp:TextBox ID="txtProductName" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvProductName" runat="server" ControlToValidate="txtProductName" ValidationGroup="vgAddProduct"
+                    <asp:RequiredFieldValidator ID="rfvProductName" runat="server" ControlToValidate="txtProductName" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         ErrorMessage="Please enter product name." Display="Dynamic">
                     </asp:RequiredFieldValidator>
                 </td>
@@ -53,7 +56,7 @@
                 <td style="text-align: left;">Category</td>
                 <td>
                     <asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" InitialValue="0" ControlToValidate="ddlCategory" ValidationGroup="vgAddProduct"
+                    <asp:RequiredFieldValidator ID="rfvCategory" runat="server" InitialValue="0" ControlToValidate="ddlCategory" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         ErrorMessage="Please choose a category." Display="Dynamic" />
                 </td>
             </tr>
@@ -61,11 +64,11 @@
                 <td style="text-align: left;">Price</td>
                 <td>
                     <asp:TextBox ID="txtPrice" runat="server" Text='<%# Eval("Price", "{0:$0.00}")%>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvPrice" runat="server" ControlToValidate="txtPrice" ValidationGroup="vgAddProduct"
+                    <asp:RequiredFieldValidator ID="rfvPrice" runat="server" ControlToValidate="txtPrice" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         ErrorMessage="Please enter price." Display="Dynamic" />
-                    <asp:CompareValidator ID="cfCurrency" runat="server" ControlToValidate="txtPrice" Operator="DataTypeCheck" ValidationGroup="vgAddProduct"
+                    <asp:CompareValidator ID="cfCurrency" runat="server" ControlToValidate="txtPrice" Operator="DataTypeCheck" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         Type="Currency" Display="Dynamic" ErrorMessage="Illegal format for currency" />
-                    <asp:RangeValidator ID="rvPrice" runat="server" ControlToValidate="txtPrice" ValidationGroup="vgAddProduct"
+                    <asp:RangeValidator ID="rvPrice" runat="server" ControlToValidate="txtPrice" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         ErrorMessage="Please enter price between (0-999)." MaximumValue="999"
                         MinimumValue="0" Type="Currency" Display="Dynamic">
                     </asp:RangeValidator>
@@ -76,7 +79,7 @@
                 <td>
                     <asp:TextBox ID="txtCurrency" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCurrency" runat="server" ControlToValidate="txtCurrency"
-                        ErrorMessage="Please enter currency." Display="Dynamic" ValidationGroup="vgAddProduct" />
+                        ErrorMessage="Please enter currency." Display="Dynamic" ValidationGroup="vgAddProduct" CssClass="ErrorMessage" />
 
                 </td>
             </tr>
@@ -84,7 +87,7 @@
                 <td style="text-align: left;">Unit</td>
                 <td>
                     <asp:DropDownList ID="ddlUnits" runat="server"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="rfvUnit" runat="server" ControlToValidate="ddlUnits" InitialValue="0" ValidationGroup="vgAddProduct"
+                    <asp:RequiredFieldValidator ID="rfvUnit" runat="server" ControlToValidate="ddlUnits" InitialValue="0" ValidationGroup="vgAddProduct" CssClass="ErrorMessage"
                         ErrorMessage="Please choose a unit." Display="Dynamic">
                     </asp:RequiredFieldValidator>
                 </td>
