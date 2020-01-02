@@ -74,6 +74,10 @@
   <ItemGroup>
     <Content Include="Category\AddCategory.aspx" />
     <Content Include="Category\Category.aspx" />
+    <Content Include="Contents\AddCategoryStyleSheet.css" />
+    <Content Include="Contents\AddProductStyleSheet.css" />
+    <Content Include="Contents\CategoryStyleSheet.css" />
+    <Content Include="Contents\ProductStyleSheet.css" />
     <Content Include="Contents\Style.css" />
     <Content Include="Contents\VerticleNavigation.css" />
     <Content Include="Global.asax" />

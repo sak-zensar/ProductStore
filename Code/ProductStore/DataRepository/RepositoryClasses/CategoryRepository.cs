@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DataRepository
 {
-    public class CategoryRepository : IRepository
+    public class CategoryRepository : ICategoryRepository
     {
         public dynamic GetData(dynamic data)
         {

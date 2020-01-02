@@ -1,0 +1,12 @@
+﻿
+td input, td select {
+    height: 25px;
+    font-size: 13px;
+    color: black;
+}
+
+.HeaderClass {
+    text-align: center;
+    font-weight: 300;
+    font-size: 15px;
+}

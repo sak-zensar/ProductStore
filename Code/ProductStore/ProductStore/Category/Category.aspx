@@ -2,22 +2,10 @@
 
 <%@ MasterType VirtualPath="~/Shared/Site.Master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <style>
-        td input, td select {
-            height: 25px;
-            font-size: 13px;
-            color: black;
-        }
-
-        .HeaderClass {
-            text-align: center;
-            font-weight: 300;
-            font-size: 15px;
-        }
-    </style>
+<asp:Content ID="cphCategoryHead" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <link href="../Contents/ProductStyleSheet.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+<asp:Content ID="cphCategoryBody" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div style="width: 30%; margin: auto;">
         <h2 id="PageHeader">Categories</h2>
     </div>

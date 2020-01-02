@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DataRepository
 {
-    public class UnitRepository : IRepository
+    public class UnitRepository : IUnitRepositoryInterface
     {
         public dynamic Delete(dynamic data)
         {

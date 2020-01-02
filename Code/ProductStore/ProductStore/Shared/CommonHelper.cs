@@ -12,6 +12,13 @@ namespace ProductStore.Shared
         {
             //Site site = new Site();
             //site.ErrorMessage = ex.InnerException != null ? string.Format("Exception Message: {0}, Inner Message: {1}.", ex.Message, ex.InnerException.Message) : string.Format("Exception Message: {0}.", ex.Message);
+            /*
+            / We can implement logs here instaed of showing error in followings way
+            / 1. Log4Net
+            / 2. File
+            / 3. Database
+            / 4. Event Viewer
+            */
             if (lblErrorMessage != null)
             {
                 lblErrorMessage.Visible = true;

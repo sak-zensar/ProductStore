@@ -12,10 +12,11 @@ namespace Service.Controllers
     public class CategoryController : ApiController
     {
         //private ProductStoreEntities db = new ProductStoreEntities();
-        private IRepository _repository = null;
-        public CategoryController()
+        private ICategoryRepository _repository = null;
+        public CategoryController(ICategoryRepository repository)
         {
-            _repository = new CategoryRepository();
+            _repository = repository;
+            //_repository = new CategoryRepository();
         }
 
         // GET: api/Category
