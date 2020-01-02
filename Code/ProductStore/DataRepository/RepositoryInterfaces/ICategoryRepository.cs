@@ -1,9 +1,6 @@
-﻿using Models;
-using System.Collections.Generic;
-
-namespace DataRepository
+﻿namespace DataRepository
 {
-    public interface IRepository
+    public interface ICategoryRepository
     {
         dynamic Insert(dynamic data);
         dynamic Update(dynamic data);

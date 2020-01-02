@@ -1,28 +1,10 @@
 ﻿<%@ Page Title="Product Store - Product" Language="C#" MasterPageFile="~/Shared/Site.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="ProductStore.Product.Product" %>
 
 <%@ MasterType VirtualPath="~/Shared/Site.Master" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <style>
-        td input, td select {
-            height: 25px;
-            font-size: 13px;
-            color: black;
-        }
-
-        .HeaderClass {
-            text-align: center;
-            font-weight: 300;
-            font-size: 15px;
-        }
-
-        .SearchControls input, .SearchControls select {
-            height: 25px;
-            font-size: 13px;
-            color: black;
-        }
-    </style>
+<asp:Content ID="cphProductHead" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <link href="../Contents/ProductStyleSheet.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+<asp:Content ID="cphProductBody" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div style="width: 30%; margin: auto;">
         <h2 id="PageHeader">Products</h2>
     </div>

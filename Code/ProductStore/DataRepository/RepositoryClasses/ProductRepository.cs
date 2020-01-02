@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DataRepository
 {
-    public class ProductRepository : IRepository
+    public class ProductRepository : IProductRepositoryInteface
     {
         public dynamic GetData(dynamic data)
         {

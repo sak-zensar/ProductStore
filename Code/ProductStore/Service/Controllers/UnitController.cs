@@ -15,10 +15,10 @@ namespace Service.Controllers
     public class UnitController : ApiController
     {
         private ProductStoreEntities db = new ProductStoreEntities();
-        private IRepository _repository = null;
-        public UnitController()
+        private IUnitRepositoryInterface _repository = null;
+        public UnitController(IUnitRepositoryInterface unitRepository)
         {
-            _repository = new UnitRepository();
+            _repository = unitRepository;
         }
         // GET: api/Unit
         [AcceptVerbs("Get")]

@@ -2,25 +2,10 @@
 
 <%@ MasterType VirtualPath="~/Shared/Site.Master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <style>
-        table tr {
-            padding: 0px 5px;
-        }
-
-        .LinkBackButton {
-            padding: 5px 10%;
-        }
-
-        td input, td select {
-            width: 90%;
-            height: 25px;
-            font-size: 13px;
-            color: black;
-        }
-    </style>
+<asp:Content ID="cphAddCategoryHead" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <link href="../Contents/AddCategoryStyleSheet.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+<asp:Content ID="cphAddCategoryBody" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <div style="width: 30%; margin: auto;">
         <h2 id="PageHeader">Add Category</h2>
     </div>

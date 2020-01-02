@@ -10,10 +10,10 @@ namespace Service.Controllers
     [RoutePrefix("api/Product")]
     public class ProductController : ApiController
     {
-        private IRepository _productorRepository = null;
-        public ProductController()
+        private IProductRepositoryInteface _productorRepository = null;
+        public ProductController(IProductRepositoryInteface productorRepository)
         {
-            _productorRepository = new ProductRepository();
+            _productorRepository = productorRepository;
         }
         [AcceptVerbs("Get")]
         [Route("ProductSearch")]
