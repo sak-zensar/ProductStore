@@ -18,6 +18,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
+    <div style="width: 30%; margin: auto;">
+        <h2 id="PageHeader">Categories</h2>
+    </div>
     <br />
     <div style="width: 100%;">
         <asp:Label ID="lblErrorMessage" runat="server" CssClass="ErrorMessage" Visible="false"></asp:Label>
@@ -47,7 +50,7 @@
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:TextBox ID="txtName" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ValidationGroup="vgAddCategory"
+                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ValidationGroup="vgUpdateCategory" CssClass="ErrorMessage"
                             ErrorMessage="Please enter category name." Display="Dynamic">
                         </asp:RequiredFieldValidator>
                     </EditItemTemplate>
@@ -59,7 +62,7 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="txtDescription" runat="server" Text='<%#Eval("Description") %>'></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ControlToValidate="txtDescription"
-                            ErrorMessage="Please enter description." Display="Dynamic" ValidationGroup="vgAddCategory" />
+                            ErrorMessage="Please enter description." Display="Dynamic" ValidationGroup="vgUpdateCategory" CssClass="ErrorMessage" />
                     </EditItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Edit" ItemStyle-Width="10%" HeaderStyle-Width="10%" HeaderStyle-CssClass="HeaderClass">
@@ -67,7 +70,7 @@
                         <asp:Button ID="btn_Edit" runat="server" Text="Edit" CommandName="Edit" />
                     </ItemTemplate>
                     <EditItemTemplate>
-                        <asp:Button ID="btn_Update" runat="server" Text="Update" CommandName="Update" ValidationGroup="vgAddCategory" />
+                        <asp:Button ID="btn_Update" runat="server" Text="Update" CommandName="Update" ValidationGroup="vgUpdateCategory" />
                         <asp:Button ID="btn_Cancel" runat="server" Text="Cancel" CommandName="Cancel" />
                     </EditItemTemplate>
                 </asp:TemplateField>
@@ -80,9 +83,9 @@
             <AlternatingRowStyle BackColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFFBD6" ForeColor="#333333" HorizontalAlign="Center" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
-            <EmptyDataRowStyle Width="100%" BackColor="#990000" Font-Bold="True" ForeColor="#333333" HorizontalAlign="Center" />
+            <EmptyDataRowStyle Width="100%" BackColor="#990000" Font-Bold="True" Font-Size="Larger" ForeColor="#333333" HorizontalAlign="Center" />
             <EmptyDataTemplate>
-                <div style="text-align: center">No records found.</div>
+                <div style="text-align: center;">No records found.</div>
             </EmptyDataTemplate>
         </asp:GridView>
     </div>

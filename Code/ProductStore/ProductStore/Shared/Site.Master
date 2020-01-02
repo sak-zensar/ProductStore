@@ -20,7 +20,7 @@
             width: 60%;
         }
 
-        .ErrorMessage {
+        .ErrorMessage, .required {
             color: red;
             font-size: 20px;
             font-weight: 400;
@@ -87,6 +87,10 @@
             font-size: 20px;
             color: black;
             border-bottom: solid 1px rgba(255,255,255,0.1);
+        }
+        #PageHeader 
+        {
+            margin:auto;
         }
     </style>
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
